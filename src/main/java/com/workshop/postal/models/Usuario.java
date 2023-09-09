@@ -1,9 +1,7 @@
 package com.workshop.postal.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
@@ -14,7 +12,7 @@ import java.util.UUID;
 @Setter
 public abstract class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     public String cedula;
     public String nombre;
