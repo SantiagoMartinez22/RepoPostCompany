@@ -8,7 +8,6 @@ import com.workshop.postal.models.Empleado;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class EmpleadoService {
@@ -24,7 +23,7 @@ public class EmpleadoService {
         return empleadoRepository.findAll();
     }
 
-    public Optional<Empleado> findById(UUID id) {
+    public Optional<Empleado> findById(Long id) {
         return empleadoRepository.findById(id);
     }
 
@@ -32,7 +31,7 @@ public class EmpleadoService {
         return empleadoRepository.save(empleado);
     }
 
-    public void deleteById(UUID id) {
+    public void deleteById(Long id) {
         empleadoRepository.deleteById(id);
     }
 }

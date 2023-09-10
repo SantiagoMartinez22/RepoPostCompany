@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/empleados")
@@ -27,7 +26,7 @@ public class EmpleadoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Empleado> getEmpleadoById(@PathVariable UUID id) {
+    public ResponseEntity<Empleado> getEmpleadoById(@PathVariable Long id) {
         Optional<Empleado> empleado = empleadoService.findById(id);
         if (empleado.isPresent()) {
             return ResponseEntity.ok(empleado.get());
@@ -42,7 +41,7 @@ public class EmpleadoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Empleado> updateEmpleado(@PathVariable UUID id, @RequestBody Empleado empleado) {
+    public ResponseEntity<Empleado> updateEmpleado(@PathVariable Long id, @RequestBody Empleado empleado) {
         if (!empleadoService.findById(id).isPresent()) {
             return ResponseEntity.notFound().build();
         }
@@ -51,7 +50,7 @@ public class EmpleadoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmpleado(@PathVariable UUID id) {
+    public ResponseEntity<Void> deleteEmpleado(@PathVariable Long id) {
         if (!empleadoService.findById(id).isPresent()) {
             return ResponseEntity.notFound().build();
         }

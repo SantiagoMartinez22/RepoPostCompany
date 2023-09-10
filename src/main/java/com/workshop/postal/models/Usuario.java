@@ -4,16 +4,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
 public abstract class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     public String cedula;
     public String nombre;
     public String apellidos;

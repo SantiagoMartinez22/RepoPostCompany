@@ -8,7 +8,6 @@ import com.workshop.postal.repository.ClienteRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
     public class ClienteService {
@@ -24,7 +23,7 @@ import java.util.UUID;
             return clienteRepository.findAll();
         }
 
-        public Optional<Cliente> findById(UUID id) {
+        public Optional<Cliente> findById(Long id) {
             return clienteRepository.findById(id);
         }
 
@@ -32,7 +31,7 @@ import java.util.UUID;
             return clienteRepository.save(cliente);
         }
 
-        public void deleteById(UUID id) {
+        public void deleteById(Long id) {
             clienteRepository.deleteById(id);
         }
     }

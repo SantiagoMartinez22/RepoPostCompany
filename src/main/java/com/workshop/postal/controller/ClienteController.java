@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
     @RequestMapping("/clientes")
@@ -28,7 +27,7 @@ import java.util.UUID;
         }
 
         @GetMapping("/{id}")
-        public ResponseEntity<Cliente> getClienteById(@PathVariable UUID id) {
+        public ResponseEntity<Cliente> getClienteById(@PathVariable Long id) {
             Optional<Cliente> cliente = clienteService.findById(id);
             if (cliente.isPresent()) {
                 return ResponseEntity.ok(cliente.get());
@@ -43,7 +42,7 @@ import java.util.UUID;
         }
 
         @PutMapping("/{id}")
-        public ResponseEntity<Cliente> updateCliente(@PathVariable UUID id, @RequestBody Cliente cliente) {
+        public ResponseEntity<Cliente> updateCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
             if (!clienteService.findById(id).isPresent()) {
                 return ResponseEntity.notFound().build();
             }
@@ -52,7 +51,7 @@ import java.util.UUID;
         }
 
         @DeleteMapping("/{id}")
-        public ResponseEntity<Void> deleteCliente(@PathVariable UUID id) {
+        public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
             if (!clienteService.findById(id).isPresent()) {
                 return ResponseEntity.notFound().build();
             }

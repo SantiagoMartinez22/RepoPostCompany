@@ -2,12 +2,12 @@ package com.workshop.postal.repository;
 
 import com.workshop.postal.models.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-import java.util.UUID;
-
+@Repository
 public interface ClienteRepository  extends JpaRepository<Cliente, Long> {
-    void deleteById(UUID id);
+    void deleteById(Long id);
 
-    Optional<Cliente> findById(UUID id);
+    Optional<Cliente> findById(Long id);
 }
