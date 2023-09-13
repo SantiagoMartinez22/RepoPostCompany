@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public abstract class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     public String cedula;
     public String nombre;

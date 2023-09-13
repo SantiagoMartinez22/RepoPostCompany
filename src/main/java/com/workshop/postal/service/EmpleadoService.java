@@ -1,5 +1,6 @@
 package com.workshop.postal.service;
 
+import com.workshop.postal.service.Interfaces.IEmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.workshop.postal.repository.EmpleadoRepository;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmpleadoService {
+public class EmpleadoService implements IEmpleadoService {
 
     private final EmpleadoRepository empleadoRepository;
 

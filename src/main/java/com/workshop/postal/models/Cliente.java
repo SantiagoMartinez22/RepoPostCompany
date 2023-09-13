@@ -1,10 +1,12 @@
 package com.workshop.postal.models;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrimaryKeyJoinColumn;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;

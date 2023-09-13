@@ -9,7 +9,7 @@ import java.util.UUID;
 @Repository
 public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
 
-    Optional<Empleado> findById(UUID id);
+    Optional<Empleado> findById(Long id);
 
-    void deleteById(UUID id);
+    void deleteById(Long id);
 }
