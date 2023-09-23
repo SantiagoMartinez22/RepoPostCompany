@@ -10,4 +10,6 @@ public interface ClienteRepository  extends JpaRepository<Cliente, Long> {
     void deleteById(Long id);
 
     Optional<Cliente> findById(Long id);
+
+    Cliente findByCedula(Long cedulaCliente);
 }

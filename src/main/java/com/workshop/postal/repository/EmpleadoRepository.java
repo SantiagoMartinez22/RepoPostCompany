@@ -12,4 +12,6 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
     Optional<Empleado> findById(Long id);
 
     void deleteById(Long id);
+
+    Empleado findByCedula(Long cedulaEmpleado);
 }
